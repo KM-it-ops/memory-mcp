@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: memory-mcp-hub
+    runtime: docker
+    dockerfilePath: ./deploy/Dockerfile
+    dockerContext: .
+    plan: starter
+    healthCheckPath: /health
+    envVars:
+      - key: MEMORY_MCP_TOKEN
+        sync: false
+      - key: GITHUB_TOKEN
+        sync: false
+      - key: BRAIN_REPO
+        value: KM-it-ops/brain
+      - key: CLAUDE_DIR
+        value: /data/brain
+      - key: BRAIN_DIR
+        value: /app/deploy/brain-toolkit
+      - key: MEMORY_MCP_HOST
+        value: 0.0.0.0
+      - key: MEMORY_MCP_PORT
+        value: "8080"
+    disk:
+      name: brain-data
+      mountPath: /data/brain
+      sizeGB: 1

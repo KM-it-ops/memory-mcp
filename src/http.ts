@@ -91,6 +91,10 @@ export function buildHttpApp(opts: HubOptions): Express {
   app.get("/mcp", auth, sessionRoute);
   app.delete("/mcp", auth, sessionRoute);
 
+  app.get("/health", (_req, res) => {
+    res.status(200).json({ ok: true, service: "memory-mcp-hub" });
+  });
+
   return app;
 }
 
