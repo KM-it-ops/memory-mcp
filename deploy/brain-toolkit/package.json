@@ -1,0 +1,27 @@
+{
+  "name": "brain",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Self-indexing LLM-Wiki toolkit for ~/.claude/memory (portable plain-markdown second brain)",
+  "scripts": {
+    "brain": "tsx src/cli.ts",
+    "index": "tsx src/cli.ts index",
+    "hot": "tsx src/cli.ts hot",
+    "lint": "tsx src/cli.ts lint",
+    "check": "tsx src/cli.ts check",
+    "migrate": "tsx src/cli.ts migrate",
+    "wiki-lint": "tsx src/cli.ts wiki-lint",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.5"
+  }
+}

@@ -1,0 +1,12 @@
+# Dependencies
+node_modules/
+deploy/brain-toolkit/node_modules/
+
+# Secrets
+.env
+*.env
+hub.env
+
+# OS
+.DS_Store
+Thumbs.db
